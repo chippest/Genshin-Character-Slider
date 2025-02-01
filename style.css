@@ -21,7 +21,7 @@ body {
 
 .app {
   flex: 1;
-  padding: 8rem 10rem;
+  padding: 8rem 9rem;
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
@@ -31,15 +31,16 @@ body {
     position: absolute;
     display: flex;
     background: #000;
-    gap: 3.5rem;
-    padding: 2rem;
+    gap: 3.4rem;
+    padding: 2.1rem;
     color: white;
-    top: 9.5vh;
+    top: 6.3rem;
   }
 
   #characterName {
     background: blue;
     font-size: 7rem;
+    align-self: center;
   }
 
   .right {
