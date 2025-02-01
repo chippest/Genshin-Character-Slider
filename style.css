@@ -8,17 +8,23 @@
   src: url("/zh-cn.ttf") format("truetype");
 }
 
-.app {
+body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+}
+
+.app {
+  flex: 1;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+
   .left {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    gap: 13rem;
 
     #elementSelectors {
       display: flex;
@@ -26,13 +32,26 @@
     }
 
     #characterName {
-      font-size: 8rem;
+      font-size: 6rem;
       font-family: "ZhCnFont", sans-serif;
     }
   }
 
   .right {
     border: 1px solid black;
+    display: flex;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .top,
+      .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
+    }
 
     .characterSelector {
       #charSlider {
