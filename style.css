@@ -1,11 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 @font-face {
   font-family: "ZhCnFont";
   src: url("/zh-cn.ttf") format("truetype");
+}
+
+:root {
+  --light: green;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "ZhCnFont", sans-serif;
 }
 
 body {
@@ -16,30 +21,32 @@ body {
 
 .app {
   flex: 1;
-  padding: 0 1rem;
+  padding: 8rem 10rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
+  position: relative;
 
-  .left {
-    border: 1px solid black;
+  #elementSelectors {
+    position: absolute;
     display: flex;
-    flex-direction: column;
+    background: #000;
+    gap: 3.5rem;
+    padding: 2rem;
+    color: white;
+    top: 9.5vh;
+  }
 
-    #elementSelectors {
-      display: flex;
-      gap: 1rem;
-    }
-
-    #characterName {
-      font-size: 6rem;
-      font-family: "ZhCnFont", sans-serif;
-    }
+  #characterName {
+    background: blue;
+    font-size: 7rem;
   }
 
   .right {
     border: 1px solid black;
     display: flex;
+    justify-content: end;
+    flex: 1;
 
     .info {
       display: flex;
