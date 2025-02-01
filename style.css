@@ -4,7 +4,7 @@
 }
 
 :root {
-  --light: green;
+  --light: #92a47d;
 }
 
 * {
@@ -23,49 +23,151 @@ body {
   flex: 1;
   padding: 8rem 9rem;
   display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-  position: relative;
+  background: #0c0f0a;
+  color: white;
 
-  #elementSelectors {
-    position: absolute;
-    display: flex;
-    background: #000;
-    gap: 3.4rem;
-    padding: 2.1rem;
-    color: white;
-    top: 6.3rem;
-  }
-
-  #characterName {
-    background: blue;
-    font-size: 7rem;
-    align-self: center;
-  }
-
-  .right {
+  .info {
+    flex: 1;
     border: 1px solid black;
     display: flex;
-    justify-content: end;
-    flex: 1;
+    flex-direction: column;
+    position: relative;
 
-    .info {
+    #elementSelectors {
+      position: absolute;
+      display: flex;
+      font-size: 2rem;
+      gap: 3.7rem;
+    }
+    #gnosisHead {
+      text-align: end;
+      font-size: 1.5rem;
+      margin-top: 0.4rem;
+      color: var(--light);
+    }
+    #gnosisName {
+      text-align: end;
+      font-size: 2.3rem;
+      font-weight: bolder;
+      margin-top: 0.3rem;
+    }
+    #constellationHead {
+      text-align: end;
+      font-size: 1.5rem;
+      margin-top: 3.4rem;
+      color: var(--light);
+    }
+    #constellationName {
+      text-align: end;
+      font-size: 2.3rem;
+      font-weight: bolder;
+      margin-top: 0.3rem;
+    }
+    #characterName {
+      font-size: 7rem;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .underNameSpace {
+      height: 13rem;
+    }
+    .logo {
+      position: absolute;
+      right: 0;
+      bottom: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      .top,
-      .bottom {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
+
+      #characterLogo {
+        border: 1px solid black;
+        align-self: flex-end;
+        height: 12rem;
+        width: 8rem;
+      }
+      .genshin {
+        text-align: end;
+        font-size: 2rem;
+      }
+      .impact {
+        text-align: end;
+        font-size: 2rem;
+        color: var(--light);
       }
     }
+  }
 
-    .characterSelector {
-      #charSlider {
-        writing-mode: vertical-lr;
-        direction: rtl;
-      }
+  .characterSelector {
+    #charSlider {
+      writing-mode: vertical-lr;
+      direction: rtl;
+      height: 100%;
+      display: flex;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 10px;
+      background: transparent;
+    }
+
+    #charSlider::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+    }
+
+    #charSlider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #4caf50;
+      cursor: pointer;
+      border-radius: 50%;
+      margin-top: -6px;
+    }
+
+    #charSlider::-moz-range-track {
+      width: 100%;
+      height: 8px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+    }
+
+    #charSlider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #4caf50;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #charSlider::-ms-track {
+      width: 100%;
+      height: 8px;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    #charSlider::-ms-fill-lower {
+      background: #ddd;
+      border-radius: 3px;
+    }
+
+    #charSlider::-ms-fill-upper {
+      background: #ddd;
+      border-radius: 3px;
+    }
+
+    #charSlider::-ms-thumb {
+      width: 20px;
+      height: 20px;
+      background: #4caf50;
+      cursor: pointer;
+      border-radius: 50%;
     }
   }
 }
