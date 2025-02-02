@@ -21,6 +21,20 @@ body {
   position: relative;
 }
 
+@keyframes fadeOutIn {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.fade-out-in {
+  animation: fadeOutIn 0.5s ease-in-out;
+}
+
 .background {
   width: 100%;
   height: 100%;
@@ -83,6 +97,7 @@ body {
 
       img {
         width: 3rem;
+        transition: all 0.5s;
       }
     }
     #gnosisHead {

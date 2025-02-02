@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     thumb.style.top = `${offsetY}px`;
 
     const percentage = 100 - Math.round((offsetY / rect.height) * 100);
-    console.log(`${percentage}%`);
 
     const thumbHeight = thumb.offsetHeight;
     const gap = 5; // Adjust gap
@@ -36,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     stripes.forEach((stripe) => {
       stripe.style.setProperty("--1up", `${top}%`);
-      console.log(top);
       stripe.style.setProperty("--1down", `${bottom + gap}%`);
-      console.log(bottom + gap);
     });
   };
 
