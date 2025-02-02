@@ -11,45 +11,59 @@
   margin: 0;
   padding: 0;
   font-family: "ZhCnFont", sans-serif;
+  transition: color 0.2s;
 }
 
 body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  user-select: none; /* Prevent text selection */
+  user-select: none;
   position: relative;
 }
 
-@keyframes fadeOutIn {
-  0%,
-  100% {
-    opacity: 1;
+.fade1 {
+  animation: fade1 0.3s forwards;
+}
+@keyframes fade1 {
+  0% {
+    color: var(--iconAccent);
   }
   50% {
-    opacity: 0;
+    /* margin-right: 2rem; */
+    font-size: 2rem;
+    opacity: 0%;
+    color: var(--iconAccent);
   }
-}
-
-.fade-out-in {
-  animation: fadeOutIn 0.5s ease-in-out;
+  90% {
+    color: var(--iconAccent);
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 .background {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #0c0f0a;
+  display: flex;
+  background: linear-gradient(#0c0f0a 80%, transparent 500%);
+
+  img {
+    object-fit: contain;
+  }
 
   .stripes {
     display: flex;
     height: 100%;
     gap: 0.5rem;
     margin-left: 23rem;
+    position: absolute;
 
     .stripe {
       --1up: 9.5%;
-      --1down: 18.5%;
+      --1down: 17%;
 
       height: 100%;
       width: 8px;
@@ -82,6 +96,8 @@ body {
   display: flex;
   color: white;
   gap: 1.5rem;
+  background: var(--light);
+  transition: 0.2s all;
 
   .info {
     flex: 1;
@@ -93,10 +109,10 @@ body {
       position: absolute;
       display: flex;
       font-size: 2rem;
-      gap: 1.6rem;
+      gap: 2.75rem;
 
       img {
-        width: 3rem;
+        width: 2rem;
         transition: all 0.5s;
       }
     }
@@ -145,6 +161,7 @@ body {
         align-self: flex-end;
         height: 12rem;
         width: 8rem;
+        object-fit: cover;
       }
       .genshin {
         text-align: end;
