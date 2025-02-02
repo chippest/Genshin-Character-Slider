@@ -322,16 +322,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const sliderRect = rangeSlider.getBoundingClientRect();
       let newTop = event.clientY - sliderRect.top;
       newTop = Math.max(0, Math.min(newTop, sliderRect.height));
+      rangeThumb.style.top = `${(newTop / sliderRect.height) * 100}%`;
+
       const elementIndex = elements.findIndex(
         (element) =>
           element.gnosis === document.getElementById("gnosisName").textContent
       );
-      const characterCount = elements[elementIndex].characters.length;
-      const stepHeight = sliderRect.height / (characterCount - 1);
-      const characterIndex = Math.round(newTop / stepHeight);
-      rangeThumb.style.top = `${
-        (characterIndex / (characterCount - 1)) * 100
-      }%`;
+      const characterIndex = Math.round(
+        (newTop / sliderRect.height) *
+          (elements[elementIndex].characters.length - 1)
+      );
       selectCharacter(characterIndex, elements[elementIndex]);
     };
 

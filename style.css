@@ -189,7 +189,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       mask-image: url("thumb.svg");
-      transition: top 0.3s ease; /* Add transition for smooth movement */
+      transition: top 0.1s ease; /* Add transition for smooth movement */
     }
   }
 }
