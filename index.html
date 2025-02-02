@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="background"></div>
+    <div class="background">
+      <div class="stripes">
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+      </div>
+    </div>
     <div class="app">
       <div class="info">
         <div id="elementSelectors">
@@ -27,7 +33,10 @@
         </div>
       </div>
       <div class="characterSelector">
-        <input type="range" name="" id="charSlider" />
+        <div class="range-slider">
+          <div class="range-track"></div>
+          <div class="range-thumb"></div>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

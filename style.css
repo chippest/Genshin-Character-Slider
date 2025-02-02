@@ -17,18 +17,60 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
+  user-select: none; /* Prevent text selection */
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #0c0f0a;
+
+  .stripes {
+    display: flex;
+    height: 100%;
+    gap: 0.5rem;
+    margin-left: 23rem;
+
+    .stripe {
+      --1up: 9.5%;
+      --1down: 16.5%;
+
+      height: 100%;
+      width: 8px;
+      background: url(line.png);
+      background-position: center;
+      background-size: contain;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+
+        100% var(--1up),
+        0% var(--1up),
+        0% var(--1down),
+        100% var(--1down),
+        100% 40%,
+        0% 40%,
+        0% 60%,
+        100% 60%,
+
+        100% 100%,
+        0 100%
+      );
+    }
+  }
 }
 
 .app {
   flex: 1;
   padding: 8rem 9rem;
   display: flex;
-  background: #0c0f0a;
   color: white;
+  gap: 1.5rem;
 
   .info {
     flex: 1;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -98,68 +140,51 @@ body {
   }
 
   .characterSelector {
-    #charSlider {
-      writing-mode: vertical-lr;
-      direction: rtl;
-      height: 100%;
-      display: flex;
-      -webkit-appearance: none;
-      appearance: none;
+    height: 100%;
+
+    .range-slider {
+      position: relative;
       width: 10px;
+      height: 100%;
       background: transparent;
     }
 
-    #charSlider::-webkit-slider-runnable-track {
+    .range-track {
+      --topRight: 42%;
+      --bottomRight: 57%;
+
+      position: absolute;
       width: 100%;
-      height: 8px;
-      background: #ddd;
-      border: none;
+      height: 100%;
+      background: url(line.png);
+      background-position: center;
+      background-size: contain;
       border-radius: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      clip-path: polygon(
+        0 0,
+        100% 0,
+
+        100% var(--topRight),
+        0% var(--topRight),
+        0% var(--bottomRight),
+        100% var(--bottomRight),
+        100% 100%,
+        0 100%
+      );
     }
 
-    #charSlider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      height: 90px;
-      width: 50px;
+    .range-thumb {
+      position: absolute;
+      height: 95px;
+      width: 47px;
       background: var(--light);
       cursor: pointer;
-      margin-top: -6px;
-      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
-    }
-
-    #charSlider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      background: #4caf50;
-      cursor: pointer;
-      clip-path: polygon(
-        50% 0%,
-        75% 25%,
-        100% 50%,
-        75% 75%,
-        50% 100%,
-        25% 75%,
-        0% 50%,
-        25% 25%
-      );
-    }
-
-    #charSlider::-ms-thumb {
-      width: 20px;
-      height: 20px;
-      background: #4caf50;
-      cursor: pointer;
-      clip-path: polygon(
-        50% 0%,
-        75% 25%,
-        100% 50%,
-        75% 75%,
-        50% 100%,
-        25% 75%,
-        0% 50%,
-        25% 25%
-      );
+      border-radius: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mask-image: url("thumb.svg");
     }
   }
 }
