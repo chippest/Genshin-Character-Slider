@@ -52,3 +52,17 @@ const elements = [
     "https://static.wikia.nocookie.net/gensin-impact/images/9/9b/Element_Geo.svg/revision/latest?cb=20240401115352"
   ),
 ];
+
+// Function to display element icons
+function displayElementIcons() {
+  const container = document.getElementById("elementSelectors");
+  elements.forEach((element) => {
+    const img = document.createElement("img");
+    img.src = element.iconUrl;
+    img.alt = element.gnosis;
+    container.appendChild(img);
+  });
+}
+
+// Call the function to display the icons
+displayElementIcons();

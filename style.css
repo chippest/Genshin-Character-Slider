@@ -79,7 +79,11 @@ body {
       position: absolute;
       display: flex;
       font-size: 2rem;
-      gap: 3.7rem;
+      gap: 1.6rem;
+
+      img {
+        width: 3rem;
+      }
     }
     #gnosisHead {
       text-align: end;
