@@ -32,11 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = elementSelectors.getBoundingClientRect();
     const top = ((rect.top - 20) / window.innerHeight) * 100;
     const bottom = ((rect.top + rect.height) / window.innerHeight) * 100;
-    const gap = 1; // Adjust gap between --1up and --1down
+    const gap = 2; // Adjust gap between --1up and --1down
 
     stripes.forEach((stripe) => {
       stripe.style.setProperty("--1up", `${top}%`);
+      console.log(top);
       stripe.style.setProperty("--1down", `${bottom + gap}%`);
+      console.log(bottom + gap);
     });
   };
 
@@ -73,5 +75,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }); // Update on window resize
 
   centerThumb(); // Center the thumb by default
-  updateStripes(); // Update stripes by default
 });
