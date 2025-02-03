@@ -50,16 +50,19 @@ body {
   display: flex;
   justify-content: center;
   background: linear-gradient(#0c0f0a 80%, transparent 500%);
+  overflow: hidden;
 
   img {
     object-fit: contain;
+    border: 10px solid red;
   }
 
   .stripes {
     display: flex;
     height: 100%;
     gap: 0.5rem;
-    margin-left: 23rem;
+    position: absolute;
+    left: 23rem;
     position: absolute;
 
     .stripe {
