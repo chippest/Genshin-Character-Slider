@@ -48,6 +48,7 @@ body {
   height: 100%;
   position: absolute;
   display: flex;
+  justify-content: center;
   background: linear-gradient(#0c0f0a 80%, transparent 500%);
 
   img {
@@ -162,6 +163,7 @@ body {
         height: 12rem;
         width: 8rem;
         object-fit: cover;
+        filter: saturate(0%) brightness(1000%);
       }
       .genshin {
         text-align: end;
