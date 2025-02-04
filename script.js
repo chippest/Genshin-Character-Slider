@@ -12,13 +12,12 @@ class Element {
 }
 
 class Character {
-  constructor(name, id, element, constellation, miniUrl, refAreaUrl) {
+  constructor(name, element, constellation, miniUrl, refAreaUrl) {
     this.name = name;
-    this.id = id;
     this.element = element;
     this.constellation = constellation;
     this.mainUrl = `./chars/${name}_Profile.webp`;
-    this.miniUrl = miniUrl;
+    this.miniUrl = `./chars/${name}_Portrait.png`;
     this.refAreaUrl = refAreaUrl;
   }
 }
@@ -35,220 +34,88 @@ const elements = [
 
 // Adding characters to elements
 elements[0].addCharacter(
-  new Character(
-    "Diluc",
-    1,
-    "Pyro",
-    "Noctua",
-    "diluc_mini_url",
-    "diluc_ref_area_url"
-  )
+  new Character("Diluc", "Pyro", "Noctua", "diluc_ref_area_url")
 );
 elements[0].addCharacter(
-  new Character(
-    "Amber",
-    2,
-    "Pyro",
-    "Lepus",
-    "amber_mini_url",
-    "amber_ref_area_url"
-  )
+  new Character("Amber", "Pyro", "Lepus", "amber_ref_area_url")
 );
 elements[0].addCharacter(
-  new Character(
-    "Bennett",
-    15,
-    "Pyro",
-    "Rota Calamitas",
-    "bennett_mini_url",
-    "bennett_ref_area_url"
-  )
+  new Character("Bennett", "Pyro", "Rota Calamitas", "bennett_ref_area_url")
 );
 
 elements[1].addCharacter(
-  new Character(
-    "Mona",
-    3,
-    "Hydro",
-    "Astrolabos",
-    "mona_mini_url",
-    "mona_ref_area_url"
-  )
+  new Character("Mona", "Hydro", "Astrolabos", "mona_ref_area_url")
 );
 elements[1].addCharacter(
   new Character(
     "Tartaglia",
-    4,
     "Hydro",
     "Monoceros Caeli",
-    "tartaglia_mini_url",
     "tartaglia_ref_area_url"
   )
 );
 elements[1].addCharacter(
-  new Character(
-    "Barbara",
-    16,
-    "Hydro",
-    "Crater",
-    "barbara_mini_url",
-    "barbara_ref_area_url"
-  )
+  new Character("Barbara", "Hydro", "Crater", "barbara_ref_area_url")
 );
 
 elements[2].addCharacter(
-  new Character(
-    "Venti",
-    5,
-    "Anemo",
-    "Carmen Dei",
-    "venti_mini_url",
-    "venti_ref_area_url"
-  )
+  new Character("Venti", "Anemo", "Carmen Dei", "venti_ref_area_url")
 );
 elements[2].addCharacter(
-  new Character(
-    "Jean",
-    6,
-    "Anemo",
-    "Leo Minor",
-    "jean_mini_url",
-    "jean_ref_area_url"
-  )
+  new Character("Jean", "Anemo", "Leo Minor", "jean_ref_area_url")
 );
 elements[2].addCharacter(
-  new Character(
-    "Sucrose",
-    17,
-    "Anemo",
-    "Ampulla",
-    "sucrose_mini_url",
-    "sucrose_ref_area_url"
-  )
+  new Character("Sucrose", "Anemo", "Ampulla", "sucrose_ref_area_url")
 );
 
 elements[3].addCharacter(
-  new Character(
-    "Lisa",
-    7,
-    "Electro",
-    "Tempus Fugit",
-    "lisa_mini_url",
-    "lisa_ref_area_url"
-  )
+  new Character("Lisa", "Electro", "Tempus Fugit", "lisa_ref_area_url")
 );
 elements[3].addCharacter(
-  new Character(
-    "Razor",
-    8,
-    "Electro",
-    "Lupus Minor",
-    "razor_mini_url",
-    "razor_ref_area_url"
-  )
+  new Character("Razor", "Electro", "Lupus Minor", "razor_ref_area_url")
 );
 elements[3].addCharacter(
-  new Character(
-    "Beidou",
-    18,
-    "Electro",
-    "Victor Mare",
-    "beidou_mini_url",
-    "beidou_ref_area_url"
-  )
+  new Character("Beidou", "Electro", "Victor Mare", "beidou_ref_area_url")
 );
 
 elements[4].addCharacter(
-  new Character(
-    "Tighnari",
-    9,
-    "Dendro",
-    "Vulpes Zerda",
-    "tighnari_mini_url",
-    "tighnari_ref_area_url"
-  )
+  new Character("Tighnari", "Dendro", "Vulpes Zerda", "tighnari_ref_area_url")
 );
 elements[4].addCharacter(
-  new Character(
-    "Collei",
-    10,
-    "Dendro",
-    "Leptailurus",
-    "collei_mini_url",
-    "collei_ref_area_url"
-  )
+  new Character("Collei", "Dendro", "Leptailurus", "collei_ref_area_url")
 );
 elements[4].addCharacter(
   new Character(
     "Alhaitham",
-    19,
     "Dendro",
     "Vultur Volans",
-    "alhaitham_mini_url",
     "alhaitham_ref_area_url"
   )
 );
 
 elements[5].addCharacter(
-  new Character(
-    "Kaeya",
-    11,
-    "Cryo",
-    "Pavo Ocellus",
-    "kaeya_mini_url",
-    "kaeya_ref_area_url"
-  )
+  new Character("Kaeya", "Cryo", "Pavo Ocellus", "kaeya_ref_area_url")
 );
 elements[5].addCharacter(
-  new Character(
-    "Chongyun",
-    12,
-    "Cryo",
-    "Nubis Caesor",
-    "chongyun_mini_url",
-    "chongyun_ref_area_url"
-  )
+  new Character("Chongyun", "Cryo", "Nubis Caesor", "chongyun_ref_area_url")
 );
 elements[5].addCharacter(
-  new Character(
-    "Ganyu",
-    20,
-    "Cryo",
-    "Sinae Unicornis",
-    "ganyu_mini_url",
-    "ganyu_ref_area_url"
-  )
+  new Character("Ganyu", "Cryo", "Sinae Unicornis", "ganyu_ref_area_url")
 );
 
 elements[6].addCharacter(
   new Character(
     "Ningguang",
-    13,
     "Geo",
     "Opus Aequilibrium",
-    "ningguang_mini_url",
     "ningguang_ref_area_url"
   )
 );
 elements[6].addCharacter(
-  new Character(
-    "Zhongli",
-    14,
-    "Geo",
-    "Lapis Dei",
-    "zhongli_mini_url",
-    "zhongli_ref_area_url"
-  )
+  new Character("Zhongli", "Geo", "Lapis Dei", "zhongli_ref_area_url")
 );
 elements[6].addCharacter(
-  new Character(
-    "Albedo",
-    21,
-    "Geo",
-    "Princeps Cretaceus",
-    "albedo_mini_url",
-    "albedo_ref_area_url"
-  )
+  new Character("Albedo", "Geo", "Princeps Cretaceus", "albedo_ref_area_url")
 );
 
 const sleep = (time) => {

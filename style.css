@@ -54,7 +54,6 @@ body {
 
   img {
     object-fit: contain;
-    border: 10px solid red;
   }
 
   .stripes {
@@ -161,11 +160,10 @@ body {
       flex-direction: column;
 
       #characterLogo {
-        border: 1px solid black;
         align-self: flex-end;
         height: 12rem;
         width: 8rem;
-        object-fit: cover;
+        object-fit: contain;
         filter: saturate(0%) brightness(1000%);
       }
       .genshin {
