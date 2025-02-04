@@ -37,7 +37,7 @@ elements[0].addCharacter(
   new Character("Diluc", "Pyro", "Noctua", "diluc_ref_area_url")
 );
 elements[0].addCharacter(
-  new Character("Amber", "Pyro", "Lepus", "amber_ref_area_url")
+  new Character("Hu Tao", "Pyro", "Papilio Charontis", "hutao_ref_area_url")
 );
 elements[0].addCharacter(
   new Character("Bennett", "Pyro", "Rota Calamitas", "bennett_ref_area_url")
@@ -260,6 +260,9 @@ function updateText(hold2, element, text) {
   textExchange1();
 }
 
+let profile = document.getElementById("profile");
+let portrait = document.getElementById("portrait");
+
 // Function to select a character
 function selectCharacter(index, element) {
   const selectedCharacter = element.characters[index];
@@ -274,6 +277,17 @@ function selectCharacter(index, element) {
       "constellationName",
       "textSelect2"
     );
+    profile.style.transform = "translateX(3rem)";
+    profile.style.opacity = "0";
+    setTimeout(() => {
+      profile.style.transform = "translateX(-3rem)";
+      profile.src = selectedCharacter.mainUrl;
+    }, 200);
+    setTimeout(() => {
+      profile.style.opacity = "1";
+      profile.style.transform = "";
+    }, 200);
+    portrait.src = selectedCharacter.miniUrl;
   }
 }
 
