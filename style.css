@@ -125,30 +125,40 @@ body {
       font-size: 1.5rem;
       margin-top: 0.4rem;
       color: var(--light);
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
     #gnosisName {
       text-align: end;
       font-size: 2.3rem;
       font-weight: bolder;
       margin-top: 0.3rem;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
     #constellationHead {
       text-align: end;
       font-size: 1.5rem;
       margin-top: 3.4rem;
       color: var(--light);
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
     #constellationName {
       text-align: end;
       font-size: 2.3rem;
       font-weight: bolder;
       margin-top: 0.3rem;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
     #characterName {
       font-size: 7rem;
       flex: 1;
       display: flex;
       align-items: center;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
     .underNameSpace {
       height: 13rem;
@@ -171,11 +181,15 @@ body {
       .genshin {
         text-align: end;
         font-size: 2rem;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
       }
       .impact {
         text-align: end;
         font-size: 2rem;
         color: var(--light);
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
       }
     }
   }
