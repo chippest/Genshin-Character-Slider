@@ -274,7 +274,6 @@ function selectCharacter(index, element) {
       "constellationName",
       "textSelect2"
     );
-    // document.getElementById("characterLogo").src = selectedCharacter.miniUrl;
   }
 }
 

@@ -159,7 +159,7 @@ body {
       display: flex;
       flex-direction: column;
 
-      #characterLogo {
+      #portrait {
         align-self: flex-end;
         height: 12rem;
         width: 8rem;
