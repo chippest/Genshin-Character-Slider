@@ -286,8 +286,16 @@ function selectCharacter(index, element) {
     setTimeout(() => {
       profile.style.opacity = "1";
       profile.style.transform = "";
+    }, 300);
+    portrait.style.scale = 0.9;
+    portrait.style.opacity = 0;
+    setTimeout(() => {
+      portrait.src = selectedCharacter.miniUrl;
     }, 200);
-    portrait.src = selectedCharacter.miniUrl;
+    setTimeout(() => {
+      portrait.style.scale = 1;
+      portrait.style.opacity = 1;
+    }, 300);
   }
 }
 
