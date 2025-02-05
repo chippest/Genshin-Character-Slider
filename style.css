@@ -52,6 +52,12 @@ body {
   background: linear-gradient(#0c0f0a 80%, transparent 500%);
   overflow: hidden;
 
+  #emblem {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
   #profile {
     object-fit: contain;
     transition: 0.2s all;
