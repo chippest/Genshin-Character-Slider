@@ -151,6 +151,7 @@ body {
       margin-top: 0.3rem;
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
         1px 1px 0 #000;
+      text-transform: capitalize;
     }
     #characterName {
       font-size: 7rem;
@@ -172,8 +173,7 @@ body {
 
       #portrait {
         align-self: flex-end;
-        height: 12rem;
-        width: 8rem;
+        width: 10rem;
         object-fit: contain;
         filter: saturate(0%) brightness(1000%);
         transition: 0.2s all;
