@@ -12,13 +12,13 @@ class Element {
 }
 
 class Character {
-  constructor(name, element, constellation, miniUrl, refAreaUrl) {
+  constructor(name, element, constellation, emblem) {
     this.name = name;
     this.element = element;
     this.constellation = constellation;
     this.mainUrl = `./chars/${name}_Profile.webp`;
     this.miniUrl = `./chars/${name}_Portrait.png`;
-    this.refAreaUrl = refAreaUrl;
+    this.emblem = `./emblems/Emblem_${emblem}_White.png`;
   }
 }
 
@@ -26,16 +26,14 @@ const elements = [
   new Element("Pyro", "#FF4500"),
   new Element("Hydro", "#1E90FF"),
   new Element("Anemo", "#00FF7F"),
-  new Element("Electro", "#8A2BE2"),
+  new Element("ELECTRO", "#8A2BE2"),
   new Element("Dendro", "#32CD32"),
   new Element("Cryo", "#00CED1"),
   new Element("Geo", "#DAA520"),
 ];
 
 // Adding characters to elements
-elements[0].addCharacter(
-  new Character("Diluc", "Pyro", "Noctua", "diluc_ref_area_url")
-);
+elements[0].addCharacter(new Character("Diluc", "Pyro", "Noctua", "Mondstadt"));
 elements[0].addCharacter(
   new Character("Hu Tao", "Pyro", "Papilio Charontis", "hutao_ref_area_url")
 );
@@ -72,7 +70,7 @@ elements[3].addCharacter(
   new Character("Lisa", "Electro", "Tempus Fugit", "lisa_ref_area_url")
 );
 elements[3].addCharacter(
-  new Character("Razor", "Electro", "Lupus Minor", "razor_ref_area_url")
+  new Character("Razor", "Electro", "LUPUS MINOR", "razor_ref_area_url")
 );
 elements[3].addCharacter(
   new Character("Beidou", "Electro", "Victor Mare", "beidou_ref_area_url")
@@ -255,6 +253,9 @@ function updateText(hold2, element, text) {
       hold3[i].classList.add("fade1");
       await sleep(50);
       hold3[i].innerHTML = charr2[i];
+    }
+    if (element === "gnosisName" || element === "constellationName") {
+      hold1.style.textTransform = "uppercase";
     }
   };
   textExchange1();
