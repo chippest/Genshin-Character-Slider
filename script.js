@@ -35,85 +35,68 @@ const elements = [
 // Adding characters to elements
 elements[0].addCharacter(new Character("Diluc", "Pyro", "Noctua", "Mondstadt"));
 elements[0].addCharacter(
-  new Character("Hu Tao", "Pyro", "Papilio Charontis", "hutao_ref_area_url")
+  new Character("Hu Tao", "Pyro", "Papilio Charontis", "Liyue")
 );
 elements[0].addCharacter(
-  new Character("Bennett", "Pyro", "Rota Calamitas", "bennett_ref_area_url")
+  new Character("Bennett", "Pyro", "Rota Calamitas", "Mondstadt")
 );
 
 elements[1].addCharacter(
-  new Character("Mona", "Hydro", "Astrolabos", "mona_ref_area_url")
+  new Character("Mona", "Hydro", "Astrolabos", "Mondstadt")
 );
 elements[1].addCharacter(
-  new Character(
-    "Tartaglia",
-    "Hydro",
-    "Monoceros Caeli",
-    "tartaglia_ref_area_url"
-  )
+  new Character("Xingqiu", "Hydro", "Fabulae Textile", "Liyue")
 );
 elements[1].addCharacter(
-  new Character("Barbara", "Hydro", "Crater", "barbara_ref_area_url")
+  new Character("Ayato", "Hydro", "Cypressus Custos", "Inazuma")
 );
 
 elements[2].addCharacter(
-  new Character("Venti", "Anemo", "Carmen Dei", "venti_ref_area_url")
+  new Character("Venti", "Anemo", "Carmen Dei", "Mondstadt")
 );
 elements[2].addCharacter(
-  new Character("Jean", "Anemo", "Leo Minor", "jean_ref_area_url")
+  new Character("Jean", "Anemo", "Leo Minor", "Mondstadt")
 );
 elements[2].addCharacter(
-  new Character("Sucrose", "Anemo", "Ampulla", "sucrose_ref_area_url")
+  new Character("Kazuha", "Anemo", "Acer Palmatum", "Inazuma")
 );
 
 elements[3].addCharacter(
-  new Character("Lisa", "Electro", "Tempus Fugit", "lisa_ref_area_url")
+  new Character("Lisa", "Electro", "Tempus Fugit", "Mondstadt")
 );
 elements[3].addCharacter(
-  new Character("Razor", "Electro", "LUPUS MINOR", "razor_ref_area_url")
+  new Character("Razor", "Electro", "Lupus Minor", "Mondstadt")
 );
 elements[3].addCharacter(
-  new Character("Beidou", "Electro", "Victor Mare", "beidou_ref_area_url")
+  new Character("Yae Miko", "Electro", "Divina Vulpes", "Inazuma")
 );
 
 elements[4].addCharacter(
-  new Character("Tighnari", "Dendro", "Vulpes Zerda", "tighnari_ref_area_url")
+  new Character("Tighnari", "Dendro", "Vulpes Zerda", "Sumeru")
 );
 elements[4].addCharacter(
-  new Character("Collei", "Dendro", "Leptailurus", "collei_ref_area_url")
+  new Character("Collei", "Dendro", "Leptailurus", "Sumeru")
 );
 elements[4].addCharacter(
-  new Character(
-    "Alhaitham",
-    "Dendro",
-    "Vultur Volans",
-    "alhaitham_ref_area_url"
-  )
+  new Character("Alhaitham", "Dendro", "Vultur Volans", "Sumeru")
 );
 
 elements[5].addCharacter(
-  new Character("Kaeya", "Cryo", "Pavo Ocellus", "kaeya_ref_area_url")
+  new Character("Kaeya", "Cryo", "Pavo Ocellus", "Mondstadt")
 );
 elements[5].addCharacter(
-  new Character("Chongyun", "Cryo", "Nubis Caesor", "chongyun_ref_area_url")
+  new Character("Chongyun", "Cryo", "Nubis Caesor", "Liyue")
 );
 elements[5].addCharacter(
-  new Character("Ganyu", "Cryo", "Sinae Unicornis", "ganyu_ref_area_url")
+  new Character("Eula", "Cryo", "Aphros Delos", "Mondstadt")
 );
 
 elements[6].addCharacter(
-  new Character(
-    "Ningguang",
-    "Geo",
-    "Opus Aequilibrium",
-    "ningguang_ref_area_url"
-  )
+  new Character("Ningguang", "Geo", "Opus Aequilibrium", "Liyue")
 );
+elements[6].addCharacter(new Character("Zhongli", "Geo", "Lapis Dei", "Liyue"));
 elements[6].addCharacter(
-  new Character("Zhongli", "Geo", "Lapis Dei", "zhongli_ref_area_url")
-);
-elements[6].addCharacter(
-  new Character("Albedo", "Geo", "Princeps Cretaceus", "albedo_ref_area_url")
+  new Character("Albedo", "Geo", "Princeps Cretaceus", "Dragonspine")
 );
 
 const sleep = (time) => {
