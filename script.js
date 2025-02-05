@@ -255,7 +255,6 @@ async function selectCharacter(index, element) {
 
   // Only update if the character is not already selected
   if (currentCharacterName !== selectedCharacter.name) {
-    console.log("h");
     currentCharacterName = selectedCharacter.name;
     updateText(selectedCharacter.name, "characterName", "textSelect1");
     updateText(
@@ -282,15 +281,15 @@ async function selectCharacter(index, element) {
       portrait.style.scale = 1;
       portrait.style.opacity = 1;
     }, 300);
-    console.log(emblem.src);
-    console.log(selectedCharacter.emblem);
-    emblem.style.opacity = "0%";
-    setTimeout(() => {
-      emblem.src = selectedCharacter.emblem;
-    }, 200);
-    setTimeout(() => {
-      emblem.style.opacity = "20%";
-    }, 300);
+    if (!emblem.src.endsWith(selectedCharacter.emblem.slice(-20))) {
+      emblem.style.opacity = "0%";
+      setTimeout(() => {
+        emblem.src = selectedCharacter.emblem;
+      }, 200);
+      setTimeout(() => {
+        emblem.style.opacity = "20%";
+      }, 300);
+    }
   }
 }
 
