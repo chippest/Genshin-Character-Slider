@@ -49,18 +49,21 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  background: linear-gradient(#0c0f0a 80%, transparent 500%);
+  background: linear-gradient(#0c0f0a 40%, transparent 500%);
   overflow: hidden;
 
   #emblem {
     position: absolute;
-    bottom: 0;
+    top: 60%;
     right: 0;
+    opacity: 30%;
+    width: 30%;
   }
 
   #profile {
     object-fit: contain;
     transition: 0.2s all;
+    z-index: 0;
   }
 
   .stripes {
