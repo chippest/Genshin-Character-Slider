@@ -246,15 +246,17 @@ function updateText(hold2, element, text) {
 
 let profile = document.getElementById("profile");
 let portrait = document.getElementById("portrait");
+let emblem = document.getElementById("emblem");
+let currentCharacterName = document.getElementById("characterName").textContent;
 
 // Function to select a character
-function selectCharacter(index, element) {
+async function selectCharacter(index, element) {
   const selectedCharacter = element.characters[index];
-  const currentCharacterName =
-    document.getElementById("characterName").textContent;
 
   // Only update if the character is not already selected
   if (currentCharacterName !== selectedCharacter.name) {
+    console.log("h");
+    currentCharacterName = selectedCharacter.name;
     updateText(selectedCharacter.name, "characterName", "textSelect1");
     updateText(
       selectedCharacter.constellation,
@@ -279,6 +281,15 @@ function selectCharacter(index, element) {
     setTimeout(() => {
       portrait.style.scale = 1;
       portrait.style.opacity = 1;
+    }, 300);
+    console.log(emblem.src);
+    console.log(selectedCharacter.emblem);
+    emblem.style.opacity = "0%";
+    setTimeout(() => {
+      emblem.src = selectedCharacter.emblem;
+    }, 200);
+    setTimeout(() => {
+      emblem.style.opacity = "20%";
     }, 300);
   }
 }
