@@ -61,6 +61,7 @@ body {
     -webkit-text-stroke: 1px rgba(255, 255, 0, 0.171);
     mask-image: linear-gradient(rgb(27, 22, 22), transparent);
     -webkit-mask-image: linear-gradient(rgb(27, 22, 22), transparent 60%);
+    transition: 0.2s all ease-out;
   }
 
   #emblem {

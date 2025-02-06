@@ -246,6 +246,7 @@ let profile = document.getElementById("profile");
 let portrait = document.getElementById("portrait");
 let emblem = document.getElementById("emblem");
 let currentCharacterName = document.getElementById("characterName").textContent;
+let underText = document.getElementById("underText");
 
 // Function to select a character
 async function selectCharacter(index, element) {
@@ -288,6 +289,14 @@ async function selectCharacter(index, element) {
         emblem.style.opacity = "20%";
       }, 300);
     }
+    underText.style.opacity = "0";
+    setTimeout(() => {
+      underText.innerText = selectedCharacter.name;
+      underText.style.textTransform = "uppercase";
+    }, 200);
+    setTimeout(() => {
+      underText.style.opacity = "1";
+    }, 300);
   }
 }
 
