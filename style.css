@@ -137,9 +137,30 @@ body {
       font-size: 2rem;
       gap: 2.75rem;
 
-      img {
-        width: 2rem;
-        transition: all 0.5s;
+      .element-container {
+        position: relative;
+        display: inline-block;
+
+        .element-glow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: scale(1.2);
+          filter: blur(8px);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        img {
+          width: 2rem;
+          transition: all 0.5s;
+        }
+
+        &.selected .element-glow {
+          opacity: 1;
+        }
       }
     }
     #gnosisHead {

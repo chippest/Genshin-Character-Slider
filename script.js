@@ -180,12 +180,23 @@ centerThumb(); // Center the thumb by default
 function displayElementIcons() {
   const container = document.getElementById("elementSelectors");
   elements.forEach((element, index) => {
+    const elementContainer = document.createElement("div");
+    elementContainer.classList.add("element-container");
+
+    const imgGlow = document.createElement("img");
+    imgGlow.src = element.iconUrl;
+    imgGlow.alt = element.gnosis;
+    imgGlow.classList.add("element-glow");
+
     const img = document.createElement("img");
     img.src = element.iconUrl;
     img.alt = element.gnosis;
     img.dataset.index = index;
     img.addEventListener("click", () => selectElement(index));
-    container.appendChild(img);
+
+    elementContainer.appendChild(imgGlow);
+    elementContainer.appendChild(img);
+    container.appendChild(elementContainer);
   });
 }
 
@@ -196,9 +207,11 @@ function selectElement(index) {
   updateLightColor(selectedElement.color);
 
   // Highlight selected element icon
-  document.querySelectorAll("#elementSelectors img").forEach((img, i) => {
-    img.style.filter = i === index ? "none" : "grayscale(100%)";
-  });
+  document
+    .querySelectorAll("#elementSelectors .element-container")
+    .forEach((container, i) => {
+      container.classList.toggle("selected", i === index);
+    });
 
   // Update range slider
   const rangeSlider = document.querySelector(".range-slider .range-thumb");
