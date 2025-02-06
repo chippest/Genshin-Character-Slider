@@ -23,13 +23,13 @@ class Character {
 }
 
 const elements = [
-  new Element("Pyro", "#FF4500"),
-  new Element("Hydro", "#1E90FF"),
-  new Element("Anemo", "#00FF7F"),
-  new Element("ELECTRO", "#8A2BE2"),
-  new Element("Dendro", "#32CD32"),
-  new Element("Cryo", "#00CED1"),
-  new Element("Geo", "#DAA520"),
+  new Element("Pyro", "#FF7F50"),
+  new Element("Hydro", "#87CEFA"),
+  new Element("Anemo", "#98FB98"),
+  new Element("ELECTRO", "#DDA0DD"),
+  new Element("Dendro", "#90EE90"),
+  new Element("Cryo", "#AFEEEE"),
+  new Element("Geo", "#FFD700"),
 ];
 
 // Adding characters to elements
