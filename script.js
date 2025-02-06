@@ -192,7 +192,9 @@ function displayElementIcons() {
     img.src = element.iconUrl;
     img.alt = element.gnosis;
     img.dataset.index = index;
-    img.addEventListener("click", () => selectElement(index));
+    img.classList.add("eleLogo");
+
+    elementContainer.addEventListener("click", () => selectElement(index));
 
     elementContainer.appendChild(imgGlow);
     elementContainer.appendChild(img);

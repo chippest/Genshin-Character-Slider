@@ -147,7 +147,7 @@ body {
           left: 0;
           width: 100%;
           height: 100%;
-          transform: scale(1.2);
+          transform: scale(1.5);
           filter: blur(8px);
           opacity: 0;
           transition: opacity 0.3s;
@@ -158,8 +158,17 @@ body {
           transition: all 0.5s;
         }
 
-        &.selected .element-glow {
-          opacity: 1;
+        .eleLogo {
+          filter: grayscale(100%);
+        }
+
+        &.selected {
+          .eleLogo {
+            filter: grayscale(0%);
+          }
+          .element-glow {
+            opacity: 1;
+          }
         }
       }
     }
@@ -168,32 +177,36 @@ body {
       font-size: 1.5rem;
       margin-top: 0.4rem;
       color: var(--light);
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+      filter: drop-shadow(0 0 1rem var(--light));
+      width: fit-content;
+      align-self: flex-end;
     }
     #gnosisName {
       text-align: end;
       font-size: 2.3rem;
       font-weight: bolder;
       margin-top: 0.3rem;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+      filter: drop-shadow(0 0 1rem black);
+      width: fit-content;
+      align-self: flex-end;
     }
     #constellationHead {
       text-align: end;
       font-size: 1.5rem;
       margin-top: 3.4rem;
       color: var(--light);
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+      filter: drop-shadow(0 0 1rem var(--light));
+      width: fit-content;
+      align-self: flex-end;
     }
     #constellationName {
       text-align: end;
       font-size: 2.3rem;
       font-weight: bolder;
       margin-top: 0.3rem;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+      filter: drop-shadow(0 0 1rem black);
+      width: fit-content;
+      align-self: flex-end;
       text-transform: capitalize;
     }
     .charcont {
@@ -202,8 +215,7 @@ body {
       flex: 1;
       #characterName {
         font-size: 7rem;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-          1px 1px 0 #000;
+        filter: drop-shadow(0 0 1rem black);
       }
     }
     .underNameSpace {
@@ -227,15 +239,17 @@ body {
       .genshin {
         text-align: end;
         font-size: 2rem;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-          1px 1px 0 #000;
+        filter: drop-shadow(0 0 1rem black);
+        width: fit-content;
+        align-self: flex-end;
       }
       .impact {
         text-align: end;
         font-size: 2rem;
         color: var(--light);
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-          1px 1px 0 #000;
+        filter: drop-shadow(0 0 1rem var(--light));
+        width: fit-content;
+        align-self: flex-end;
       }
     }
   }
