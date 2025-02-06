@@ -237,9 +237,7 @@ function updateText(hold2, element, text) {
       await sleep(50);
       hold3[i].innerHTML = charr2[i];
     }
-    if (element === "gnosisName" || element === "constellationName") {
-      hold1.style.textTransform = "uppercase";
-    }
+    hold1.style.textTransform = "uppercase";
   };
   textExchange1();
 }

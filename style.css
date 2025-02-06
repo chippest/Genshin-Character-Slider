@@ -76,8 +76,8 @@ body {
     position: absolute;
 
     .stripe {
-      --1up: 9.5%;
-      --1down: 17%;
+      --1up: 7rem;
+      --1down: 11.5rem;
 
       height: 100%;
       width: 8px;
@@ -163,13 +163,15 @@ body {
         1px 1px 0 #000;
       text-transform: capitalize;
     }
-    #characterName {
-      font-size: 7rem;
-      flex: 1;
+    .charcont {
       display: flex;
       align-items: center;
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+      flex: 1;
+      #characterName {
+        font-size: 7rem;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
+      }
     }
     .underNameSpace {
       height: 13rem;
@@ -184,6 +186,7 @@ body {
       #portrait {
         align-self: flex-end;
         width: 10rem;
+        max-height: 10rem;
         object-fit: contain;
         filter: saturate(0%) brightness(1000%);
         transition: 0.2s all;
