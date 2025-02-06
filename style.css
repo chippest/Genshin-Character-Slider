@@ -52,6 +52,17 @@ body {
   background: linear-gradient(#0c0f0a 40%, transparent 500%);
   overflow: hidden;
 
+  #underText {
+    position: absolute;
+    bottom: -10%;
+    font-size: 17rem;
+    color: transparent;
+    left: 0;
+    -webkit-text-stroke: 1px rgba(255, 255, 0, 0.171);
+    mask-image: linear-gradient(rgb(27, 22, 22), transparent);
+    -webkit-mask-image: linear-gradient(rgb(27, 22, 22), transparent 60%);
+  }
+
   #emblem {
     position: absolute;
     top: 60%;
