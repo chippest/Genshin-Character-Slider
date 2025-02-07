@@ -258,6 +258,7 @@ function updateText(hold2, element, text) {
 }
 
 let profile = document.getElementById("profile");
+let profileGlow = document.getElementById("profileGlow");
 let portrait = document.getElementById("portrait");
 let emblem = document.getElementById("emblem");
 let currentCharacterName = document.getElementById("characterName").textContent;
@@ -278,13 +279,19 @@ async function selectCharacter(index, element) {
     );
     profile.style.transform = "translateX(3rem)";
     profile.style.opacity = "0";
+    profileGlow.style.transform = "translateX(3rem)";
+    profileGlow.style.opacity = "0";
     setTimeout(() => {
       profile.style.transform = "translateX(-3rem)";
       profile.src = selectedCharacter.mainUrl;
+      profileGlow.style.transform = "translateX(-3rem)";
+      profileGlow.src = selectedCharacter.mainUrl;
     }, 200);
     setTimeout(() => {
       profile.style.opacity = "1";
       profile.style.transform = "";
+      profileGlow.style.opacity = "1";
+      profileGlow.style.transform = "";
     }, 300);
     portrait.style.scale = 0.9;
     portrait.style.opacity = 0;

@@ -66,17 +66,25 @@ body {
 
   #emblem {
     position: absolute;
-    top: 60%;
+    top: 70%;
     right: 0;
     opacity: 20%;
     width: 30%;
     transition: 0.2s all;
+    mask-image: linear-gradient(rgb(27, 22, 22), transparent);
+    -webkit-mask-image: linear-gradient(rgb(27, 22, 22), transparent 60%);
   }
 
-  #profile {
+  #profile,
+  #profileGlow {
     object-fit: contain;
     transition: 0.2s all;
     z-index: 0;
+    position: absolute;
+    height: 100%;
+  }
+  #profileGlow {
+    filter: blur(8px);
   }
 
   .stripes {
@@ -300,7 +308,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       mask-image: url("thumb.svg");
-      transition: top 0.1s ease; /* Add transition for smooth movement */
+      transition: top 0.1s all 0.2s ease; /* Add transition for smooth movement */
     }
   }
 }
