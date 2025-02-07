@@ -264,12 +264,16 @@ body {
 
   .characterSelector {
     height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
     .range-slider {
       position: relative;
       width: 10px;
       height: 100%;
       background: transparent;
+      z-index: 1;
     }
 
     .range-track {
@@ -308,6 +312,16 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       mask-image: url("thumb.svg");
+      transition: top 0.1s all 0.2s ease; /* Add transition for smooth movement */
+    }
+
+    .range-thumb-follow {
+      height: 95px;
+      width: 47px;
+      filter: drop-shadow(0 0 1rem var(--light));
+      position: absolute;
+      left: 50%;
+      transform: translate(-48%, -149.5%);
       transition: top 0.1s all 0.2s ease; /* Add transition for smooth movement */
     }
   }

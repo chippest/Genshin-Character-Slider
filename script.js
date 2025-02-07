@@ -104,6 +104,7 @@ const sleep = (time) => {
 };
 const slider = document.querySelector(".range-slider");
 const thumb = document.querySelector(".range-thumb");
+const thumbFollow = document.querySelector(".range-thumb-follow");
 const track = document.querySelector(".range-track");
 const elementSelectors = document.querySelector("#elementSelectors");
 const stripes = document.querySelectorAll(".stripe");
@@ -112,6 +113,7 @@ let isDragging = false;
 
 const updateThumb = (offsetY, rect) => {
   thumb.style.top = `${offsetY}px`;
+  thumbFollow.style.top = `${offsetY + thumb.offsetHeight}px`; // Update follow element position
 
   const percentage = 100 - Math.round((offsetY / rect.height) * 100);
 
