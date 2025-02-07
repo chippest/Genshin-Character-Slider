@@ -207,7 +207,7 @@ function displayElementIcons() {
 // Function to select an element
 function selectElement(index) {
   const selectedElement = elements[index];
-  updateText(selectedElement.gnosis, "gnosisName", "textSelect3");
+  updateText(selectedElement.gnosis, "gnosisName", "textSelect3", true);
   updateLightColor(selectedElement.color);
 
   // Highlight selected element icon
@@ -228,7 +228,7 @@ function selectElement(index) {
 }
 
 // Function to update character name with transition
-function updateText(hold2, element, text) {
+function updateText(hold2, element, text, span) {
   const hold1 = document.getElementById(element);
   const charr1 = hold1.textContent.split("");
   const charr2 = hold2.split("");
@@ -244,7 +244,9 @@ function updateText(hold2, element, text) {
   }
   hold1.innerHTML = "";
   for (let i = 0; i < charr1.length; i++) {
-    hold1.innerHTML += `<strong class="${text}">${charr1[i]}</strong>`;
+    hold1.innerHTML += `<${span ? "span" : "strong"} class="${text}">${
+      charr1[i]
+    }</${span ? "span" : "strong"}>`;
   }
   let hold3 = document.querySelectorAll(`.${text}`);
 
@@ -277,7 +279,8 @@ async function selectCharacter(index, element) {
     updateText(
       selectedCharacter.constellation,
       "constellationName",
-      "textSelect2"
+      "textSelect2",
+      true
     );
     profile.style.transform = "translateX(3rem)";
     profile.style.opacity = "0";
