@@ -210,6 +210,7 @@ body {
       .element-container {
         position: relative;
         display: inline-block;
+        cursor: pointer;
 
         .element-glow {
           position: absolute;
