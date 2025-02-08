@@ -57,12 +57,15 @@ body {
     display: flex;
     justify-content: center;
     height: 100%;
+    opacity: 75%;
+    filter: blur(6px);
 
     .screen {
       width: 100vw;
       height: 100%;
       background-position: center;
       position: absolute;
+      filter: grayscale(100%);
       &.one {
         background: url(background/1.png);
         background-repeat: repeat-x;
