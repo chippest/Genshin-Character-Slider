@@ -377,7 +377,9 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       mask-image: url(background/thumb.svg);
+      -webkit-mask-image: url(background/thumb.svg);
       transition: top 0.1s all 0.2s ease; /* Add transition for smooth movement */
+      z-index: 1;
     }
 
     .range-thumb-follow {
