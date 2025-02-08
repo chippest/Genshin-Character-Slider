@@ -48,8 +48,33 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  background: linear-gradient(#0c0f0a 40%, transparent 500%);
+  background: linear-gradient(#0c0f0aab 5%, #0c0f0a 40%, transparent 500%);
   overflow: hidden;
+
+  .smoke {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .screen {
+      width: 100vw;
+      height: 100%;
+      background-position: center;
+      position: absolute;
+      &.one {
+        background: url(background/1.png);
+        background-repeat: repeat-x;
+        animation: moveLeft 20s linear infinite;
+      }
+      &.two {
+        background: url(background/2.png);
+        background-repeat: repeat-x;
+        animation: moveRight 20s linear infinite;
+      }
+    }
+  }
 
   #underText {
     position: absolute;
@@ -57,6 +82,7 @@ body {
     font-size: 17rem;
     color: transparent;
     left: 0;
+    font-family: "ZhCnFont", sans-serif;
     -webkit-text-stroke: 1px var(--light);
     mask-image: linear-gradient(rgba(27, 22, 22, 0.233), transparent);
     -webkit-mask-image: linear-gradient(
@@ -126,6 +152,24 @@ body {
         0 100%
       );
     }
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
   }
 }
 
