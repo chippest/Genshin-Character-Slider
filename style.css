@@ -66,12 +66,12 @@ body {
       &.one {
         background: url(background/1.png);
         background-repeat: repeat-x;
-        animation: moveLeft 20s linear infinite;
+        animation: moveLeft 200s linear infinite;
       }
       &.two {
         background: url(background/2.png);
         background-repeat: repeat-x;
-        animation: moveRight 20s linear infinite;
+        animation: moveRight 200s linear infinite;
       }
     }
   }
@@ -160,7 +160,7 @@ body {
     background-position: 0 0;
   }
   100% {
-    background-position: -100% 0;
+    background-position: -100vw 0;
   }
 }
 
@@ -169,7 +169,7 @@ body {
     background-position: 0 0;
   }
   100% {
-    background-position: 100% 0;
+    background-position: 100vw 0;
   }
 }
 
