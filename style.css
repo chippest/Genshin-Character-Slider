@@ -59,6 +59,7 @@ body {
     height: 100%;
     opacity: 75%;
     filter: blur(6px);
+    display: none;
 
     .screen {
       width: 100vw;
