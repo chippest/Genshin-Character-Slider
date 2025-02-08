@@ -55,7 +55,7 @@ elements[2].addCharacter(
   new Character("Venti", "Anemo", "Carmen Dei", "Mondstadt")
 );
 elements[2].addCharacter(
-  new Character("Jean", "Anemo", "Leo Minor", "Mondstadt")
+  new Character("Sucrose", "Anemo", "Ampulla", "Mondstadt")
 );
 elements[2].addCharacter(
   new Character("Kazuha", "Anemo", "Acer Palmatum", "Inazuma")
