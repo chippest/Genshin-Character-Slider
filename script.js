@@ -42,7 +42,7 @@ elements[0].addCharacter(
 );
 
 elements[1].addCharacter(
-  new Character("Mona", "Hydro", "Astrolabos", "Mondstadt")
+  new Character("Barbara", "Hydro", "Crater", "Mondstadt")
 );
 elements[1].addCharacter(
   new Character("Xingqiu", "Hydro", "Fabulae Textile", "Liyue")
