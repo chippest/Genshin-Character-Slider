@@ -185,20 +185,39 @@ window.addEventListener("wheel", (event) => {
   const rect = slider.getBoundingClientRect();
   const computedTop =
     parseFloat(getComputedStyle(thumb).top) || rect.height / 2;
-  let newTop = computedTop + event.deltaY * 2;
+  const delta = event.deltaY;
+  let newTop = computedTop + delta * 2;
+
+  // Determine the current element index from displayed gnosis element
+  const currentElementName = document.getElementById("gnosisName").textContent;
+  const currIndex = elements.findIndex(
+    (el) => el.gnosis === currentElementName
+  );
+
+  // At top and scrolling up: select previous element
+  if (newTop <= 0 && delta < 0) {
+    if (currIndex > 0) {
+      selectElement(currIndex - 1);
+      return;
+    }
+  }
+  // At bottom and scrolling down: select next element
+  if (newTop >= rect.height && delta > 0) {
+    if (currIndex < elements.length - 1) {
+      selectElement(currIndex + 1);
+      return;
+    }
+  }
+
   newTop = Math.max(0, Math.min(newTop, rect.height));
-  // Set a smoother transition
   thumb.style.transition = "top 0.2s ease";
   thumbFollow.style.transition = "top 0.2s ease";
   updateThumb(newTop, rect);
-  const elementIndex = elements.findIndex(
-    (element) =>
-      element.gnosis === document.getElementById("gnosisName").textContent
-  );
+
   const characterIndex = Math.round(
-    (newTop / rect.height) * (elements[elementIndex].characters.length - 1)
+    (newTop / rect.height) * (elements[currIndex].characters.length - 1)
   );
-  selectCharacter(characterIndex, elements[elementIndex]);
+  selectCharacter(characterIndex, elements[currIndex]);
 });
 
 centerThumb(); // Center the thumb by default
