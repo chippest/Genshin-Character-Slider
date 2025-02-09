@@ -176,6 +176,27 @@ window.addEventListener("resize", () => {
   updateStripes();
 }); // Update on window resize
 
+// Add wheel event listener to the slider for scroll-based thumb movement
+slider.addEventListener("wheel", (event) => {
+  event.preventDefault();
+  const rect = slider.getBoundingClientRect();
+  // Get current thumb top position in px (default to center if not set)
+  const computedTop =
+    parseFloat(getComputedStyle(thumb).top) || rect.height / 2;
+  let newTop = computedTop + event.deltaY;
+  newTop = Math.max(0, Math.min(newTop, rect.height));
+  updateThumb(newTop, rect);
+
+  const elementIndex = elements.findIndex(
+    (element) =>
+      element.gnosis === document.getElementById("gnosisName").textContent
+  );
+  const characterIndex = Math.round(
+    (newTop / rect.height) * (elements[elementIndex].characters.length - 1)
+  );
+  selectCharacter(characterIndex, elements[elementIndex]);
+});
+
 centerThumb(); // Center the thumb by default
 
 // Function to display element icons
