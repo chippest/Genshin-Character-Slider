@@ -64,7 +64,7 @@ body {
       height: 100%;
       background-position: center;
       position: absolute;
-      filter: grayscale(100%);
+      /* display: none; */
       &.one {
         background: url(background/1.png);
         background-repeat: repeat-x;
