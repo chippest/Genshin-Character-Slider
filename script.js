@@ -176,17 +176,21 @@ window.addEventListener("resize", () => {
   updateStripes();
 }); // Update on window resize
 
-// Add wheel event listener to the slider for scroll-based thumb movement
-slider.addEventListener("wheel", (event) => {
+// Remove or disable the existing slider wheel listener
+// slider.addEventListener("wheel", (event) => { ...existing code... });
+
+// Add a global wheel event listener for scrolling anywhere to move the thumb smoothly
+window.addEventListener("wheel", (event) => {
   event.preventDefault();
   const rect = slider.getBoundingClientRect();
-  // Get current thumb top position in px (default to center if not set)
   const computedTop =
     parseFloat(getComputedStyle(thumb).top) || rect.height / 2;
-  let newTop = computedTop + event.deltaY;
+  let newTop = computedTop + event.deltaY * 2;
   newTop = Math.max(0, Math.min(newTop, rect.height));
+  // Set a smoother transition
+  thumb.style.transition = "top 0.2s ease";
+  thumbFollow.style.transition = "top 0.2s ease";
   updateThumb(newTop, rect);
-
   const elementIndex = elements.findIndex(
     (element) =>
       element.gnosis === document.getElementById("gnosisName").textContent
