@@ -179,45 +179,60 @@ window.addEventListener("resize", () => {
 // Remove or disable the existing slider wheel listener
 // slider.addEventListener("wheel", (event) => { ...existing code... });
 
-// Add a global wheel event listener for scrolling anywhere to move the thumb smoothly
+// Remove or comment out the previous global wheel listener
+// window.addEventListener("wheel", (event) => { ...existing code... });
+
+// New wheel event listener for stepping through characters/elements
 window.addEventListener("wheel", (event) => {
   event.preventDefault();
   const rect = slider.getBoundingClientRect();
-  const computedTop =
-    parseFloat(getComputedStyle(thumb).top) || rect.height / 2;
-  const delta = event.deltaY;
-  let newTop = computedTop + delta * 2;
-
-  // Determine the current element index from displayed gnosis element
   const currentElementName = document.getElementById("gnosisName").textContent;
-  const currIndex = elements.findIndex(
+  const currElementIndex = elements.findIndex(
     (el) => el.gnosis === currentElementName
   );
+  let currentElement = elements[currElementIndex];
+  let currentCharacterIndex = currentElement.characters.findIndex(
+    (ch) => ch.name === currentCharacterName
+  );
 
-  // At top and scrolling up: select previous element
-  if (newTop <= 0 && delta < 0) {
-    if (currIndex > 0) {
-      selectElement(currIndex - 1);
-      return;
+  let targetElement = currentElement;
+  let newCharIndex = currentCharacterIndex;
+
+  if (event.deltaY < 0) {
+    // Scrolling upward: move to previous character or previous element if at first character
+    newCharIndex = currentCharacterIndex - 1;
+    if (newCharIndex < 0 && currElementIndex > 0) {
+      selectElement(currElementIndex - 1);
+      targetElement = elements[currElementIndex - 1];
+      newCharIndex = targetElement.characters.length - 1;
+    } else {
+      newCharIndex = Math.max(0, newCharIndex);
+    }
+  } else if (event.deltaY > 0) {
+    // Scrolling downward: move to next character or next element if at last character
+    newCharIndex = currentCharacterIndex + 1;
+    if (
+      newCharIndex >= currentElement.characters.length &&
+      currElementIndex < elements.length - 1
+    ) {
+      selectElement(currElementIndex + 1);
+      targetElement = elements[currElementIndex + 1];
+      newCharIndex = 0;
+    } else {
+      newCharIndex = Math.min(
+        currentElement.characters.length - 1,
+        newCharIndex
+      );
     }
   }
-  // At bottom and scrolling down: select next element
-  if (newTop >= rect.height && delta > 0) {
-    if (currIndex < elements.length - 1) {
-      selectElement(currIndex + 1);
-      return;
-    }
-  }
 
-  newTop = Math.max(0, Math.min(newTop, rect.height));
+  // Compute new thumb top based on target element's character count
+  const newTop =
+    (newCharIndex / (targetElement.characters.length - 1)) * rect.height;
   thumb.style.transition = "top 0.2s ease";
   thumbFollow.style.transition = "top 0.2s ease";
   updateThumb(newTop, rect);
-
-  const characterIndex = Math.round(
-    (newTop / rect.height) * (elements[currIndex].characters.length - 1)
-  );
-  selectCharacter(characterIndex, elements[currIndex]);
+  selectCharacter(newCharIndex, targetElement);
 });
 
 centerThumb(); // Center the thumb by default
