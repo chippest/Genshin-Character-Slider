@@ -61,7 +61,9 @@ elements[2].addCharacter(
   new Character("Kazuha", "Anemo", "Acer Palmatum", "Inazuma")
 );
 
-elements[3].addCharacter(new Character("", "Electro", "", ""));
+elements[3].addCharacter(
+  new Character("Keqing", "Electro", "Trulla Cementarii", "Liyue")
+);
 elements[3].addCharacter(
   new Character("Raiden", "Electro", "Imperatrix Umbrosa", "Inazuma")
 );
