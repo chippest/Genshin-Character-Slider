@@ -64,7 +64,9 @@ elements[2].addCharacter(
 elements[3].addCharacter(
   new Character("Lisa", "Electro", "Tempus Fugit", "Mondstadt")
 );
-elements[3].addCharacter(new Character("", "Electro", "", ""));
+elements[3].addCharacter(
+  new Character("Raiden Shogun", "Electro", "Imperatrix Umbrosa", "Inazuma")
+);
 elements[3].addCharacter(
   new Character("Yae Miko", "Electro", "Divina Vulpes", "Inazuma")
 );
