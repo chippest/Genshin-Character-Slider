@@ -344,6 +344,7 @@ body {
     .range-track {
       --topRight: 42%;
       --bottomRight: 57%;
+      transition: clip-path 0.2s ease;
 
       position: absolute;
       width: 100%;

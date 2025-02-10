@@ -115,15 +115,20 @@ const updateThumb = (offsetY, rect) => {
   thumb.style.top = `${offsetY}px`;
   thumbFollow.style.top = `${offsetY + thumb.offsetHeight}px`; // Update follow element position
 
-  const percentage = 100 - Math.round((offsetY / rect.height) * 100);
-
   const thumbHeight = thumb.offsetHeight;
   const gap = 5; // Adjust gap
   const topRight = ((offsetY - thumbHeight / 2 - gap) / rect.height) * 100;
   const bottomRight = ((offsetY + thumbHeight / 2 + gap) / rect.height) * 100;
 
-  track.style.setProperty("--topRight", `${topRight}%`);
-  track.style.setProperty("--bottomRight", `${bottomRight}%`);
+  // Set smooth transition only when not dragging
+  if (!isDragging) {
+    track.style.transition = "clip-path 0.2s ease";
+  } else {
+    track.style.transition = "none";
+  }
+
+  const polygonValue = `polygon(0 0, 100% 0, 100% ${topRight}%, 0 ${topRight}%, 0 ${bottomRight}%, 100% ${bottomRight}%, 100% 100%, 0 100%)`;
+  track.style.clipPath = polygonValue;
 };
 
 const centerThumb = () => {
