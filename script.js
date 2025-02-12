@@ -26,7 +26,7 @@ const elements = [
   new Element("Pyro", "#FF7F50"),
   new Element("Hydro", "#87CEFA"),
   new Element("Anemo", "#98FB98"),
-  new Element("ELECTRO", "#DDA0DD"),
+  new Element("ELectro", "#DDA0DD"),
   new Element("Dendro", "#90EE90"),
   new Element("Cryo", "#AFEEEE"),
   new Element("Geo", "#FFD700"),
