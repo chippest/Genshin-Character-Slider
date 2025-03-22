@@ -1,4 +1,4 @@
-# GENSHIN CHARACTER Slider
+# GENSHIN CHARACTER SLIDER
 
 - use scroll wheel to switch between characters
 - can use the slider at the right side to switch character as well
